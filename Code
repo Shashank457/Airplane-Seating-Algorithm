@@ -1,0 +1,70 @@
+#Code:-
+#Here l represent a 2d array to give the number of col and rows
+l = [[3, 2], [4, 3], [2, 3], [3, 4]]
+passengers = 9    #passengers mean number of passengers to be seated
+mrows = max([i[1] for i in l])
+a = []
+s = len(l)
+for i in range(s):
+    for j in range(l[i][0]):
+        if (i == 0 and j == 0) or (i == s-1 and j == l[i][0]-1):
+            a.append(['W']*l[i][1])
+        elif (j == 0 or j == l[i][0]-1):
+            a.append(['A']*l[i][1])
+        else:
+            a.append(['C']*l[i][1])
+
+st = 1
+rs = [len(k) for k in a]
+#Replacing all A's with the passenger number
+for i in range(mrows):
+    full = False
+    for j in range(len(a)):
+        if (st > passengers):
+            full = True
+            break
+        if (i < rs[j]):
+            if (a[j][i] == 'A'):
+                a[j][i] = st
+                st += 1
+        else:
+            continue
+    if (full):
+        break
+#Replacing all W's with the passenger number
+for i in range(mrows):
+    full = False
+    for j in range(len(a)):
+        if (st > passengers):
+            full = True
+            break
+        if (i < rs[j]):
+            if (a[j][i] == 'W'):
+                a[j][i] = st
+                st += 1
+        else:
+            continue
+    if (full):
+        break
+#Replacing all C's with the passenger number
+for i in range(mrows):
+    full = False
+    for j in range(len(a)):
+        if (st > passengers):
+            full = True
+            break
+        if (i < rs[j]):
+            if (a[j][i] == 'C'):
+                a[j][i] = st
+                st += 1
+        else:
+            continue
+    if (full):
+        break
+for i in range(mrows):
+    for j in range(len(a)):
+        if (i < rs[j]):
+            print(a[j][i], end=' ')
+        else:
+            print('X', end=' ')
+    print('\n')
