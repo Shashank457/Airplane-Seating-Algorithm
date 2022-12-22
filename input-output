@@ -1,0 +1,37 @@
+Below are the input and output of the assignment.
+Here,     W-Window seat
+          C-Middle seat
+          A-Aisle seat
+          X- Blank space(or empty space where there is no seat)
+
+Input1:-
+        l = [[3, 2], [4, 3], [2, 3], [3, 4]]
+        p = 9
+       
+Output1:-
+        W C 1 2 C C 3 4 5 6 C W
+
+        W C 7 8 C C 9 A A A C W
+
+        X X X A C C A A A A C W
+
+        X X X X X X X X X A C W
+
+
+
+
+
+
+
+Input2:-
+        l = [[3, 2], [4, 3], [2, 3], [3, 4]]
+        p = 30
+Output2:-
+        19 25 1 2 26 27 3 4 5 6 28 20
+
+        21 29 7 8 30 C 9 10 11 12 C 22
+
+        X X X 13 C C 14 15 16 17 C 23
+
+        X X X X X X X X X 18 C 24
+   
